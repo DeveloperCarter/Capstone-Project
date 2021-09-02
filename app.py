@@ -23,9 +23,6 @@ toolbar = DebugToolbarExtension(app)
 
 connect_db(app)
 
-db.drop_all()
-db.create_all()
-
 
 @app.before_request
 def add_user_to_g():
