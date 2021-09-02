@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Weatherly</title>
+    {% block title %}<title>Weatherly</title>{% endblock %}
 
     <link rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.css">
     <script src="https://unpkg.com/jquery"></script>
@@ -25,8 +25,8 @@
         <ul class="nav navbar-nav navbar-right">
             {% if request.endpoint != None %}
             <li>
-                <form class="navbar-form navbar-right" action="/users">
-                    <input name="q" class="form-control" placeholder="Search with zip code" id="search">
+                <form class="navbar-form navbar-right" action="/location">
+                    <input name="search" class="form-control" placeholder="Search with zip code">
                     <button class="btn btn-default">
                         <span class="fa fa-search"></span>
                     </button>
@@ -38,11 +38,10 @@
             <li><a href="/login">Log in</a></li>
             {% else %}
             <li>
-                <a href="/users/{{ g.user.id }}">
+                <a href="/">
                     <img src="{{ g.user.image_url }}" alt="{{ g.user.username }}">
                 </a>
             </li>
-            <li><a href="/messages/new">New Message</a></li>
             <li><a href="/logout">Log out</a></li>
             {% endif %}
         </ul>

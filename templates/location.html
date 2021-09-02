@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}<title>Weatherly | {{existing_loc.name}}</title>{% endblock %}
+{% block content %}
+<h1 class='display-2 text-center'>{{existing_loc.name}}'s Weather</h1>
+
+<div class="container pt-5">
+    <div class="row text-center">
+        <div class="col-sm">
+            <h3 class="display-6">Temperature</h3>
+            <p>{{temp}}</p>
+        </div>
+        <div class="col-sm">
+            <h3 class="display-6">Weather</h3>
+            <p>{{weath}}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
